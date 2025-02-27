@@ -1,1 +1,105 @@
+feb 25*********
+*1* UPPER MATRIX USING BOOLEAN VALUES
+import java.util.*;
+public class Main{
+    public static boolean UpperMatrix(int a[][],int s){
+        boolean yes=true;
+        for(int i=0;i<s;i++){
+            for(int j=0;j<i;j++){
+                if(a[i][j]!=0)
+                yes=false;
+                break;
+            }
+        }
+        return yes;
+    }
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        int size=sc.nextInt();
+        int arr[][]=new int[size][size];
+        for(int i=0;i<size;i++){
+            for(int j=0;j<size;j++){
+               arr[i][i]=sc.nextInt(); 
+            }
+        }
+        if(UpperMatrix(arr,size))
+        System.out.println("Upper Matrix");
+        else
+        System.out.println("Not a Upper Matrix");
+    }
+}
+OUTPUT
+3
+1 2 3
+0 5 6
+0 0 3
 
+*2* LOWER MATRIX USING BOOLEAN VALUES
+import java.util.*;
+public class Main{
+    public static boolean LowerMatrix(int a[][],int s){
+        boolean yes=true;
+        for(int i=0;i<s;i++){
+            for(int j=s+1;j<s;j++){
+                if(a[i][j]!=0)
+                yes=false;
+                break;
+            }
+        }
+        return yes;
+    }
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        int size=sc.nextInt();
+        int arr[][]=new int[size][size];
+        for(int i=0;i<size;i++){
+            for(int j=0;j<size;j++){
+               arr[i][i]=sc.nextInt(); 
+            }
+        }
+        if(UpperMatrix(arr,size))
+        System.out.println("Lower Matrix");
+        else
+        System.out.println("Not a Lower Matrix");
+    }
+}
+OUTPUT
+3
+1 0 0
+5 7 0
+1 2 3
+
+*3* SYMMETRIC MATRIX OR NOT
+import java.util.*;
+public class Main{
+    public static boolean Symmetric(int a[][],int s){
+        boolean yes=true;
+        for(int i=0;i<s;i++){
+            for(int j=0;j<s;j++){
+                if(a[i][j]!=a[j][i])
+                yes=false;
+                break;
+            }
+        }
+        return yes;
+    }
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        int size=sc.nextInt();
+        int arr[][]=new int[size][size];
+        for(int i=0;i<size;i++){
+            for(int j=0;j<size;j++){
+               arr[i][i]=sc.nextInt(); 
+            }
+        }
+        if(Symmetric(arr,size))
+        System.out.println("Symmetric");
+        else
+        System.out.println("Not");
+    }
+}
+OUTPUT
+2
+1 0
+0 1
+Symmetric
